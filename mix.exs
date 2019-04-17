@@ -5,10 +5,6 @@ defmodule Excit.Mixfile do
   @version "0.1.0"
   @organization ""
 
-  @deps [
-    {:ex_doc, "~> 0.16", only: :dev, runtime: false}
-  ]
-
   @maintainers ["Your Name"]
   @github      "https://github.com/•••/excit"
 
@@ -21,8 +17,8 @@ defmodule Excit.Mixfile do
     [
       app:     @name,
       version: @version,
-      deps:    @deps,
       elixir:  ">= 1.8.1",
+      deps:    deps(),
       elixirc_paths: elixirc_paths(Mix.env),
       aliases: aliases(),
       docs: docs(),
@@ -77,7 +73,7 @@ defmodule Excit.Mixfile do
 
   defp preferred_cli_env do
     [
-      "coveralls": :test,
+      coveralls: :test,
       "coveralls.detail": :test,
       "coveralls.post": :test,
       "coveralls.html": :test
