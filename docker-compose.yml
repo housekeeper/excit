@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  excit:
+    env_file: .env
+    build:
+      context: .
+
+    command: mix run --no-halt
+    volumes:
+      - .:/home/circleci/repo
